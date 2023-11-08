@@ -13,7 +13,6 @@ func _ready() -> void:
 	
 	for bus in busses:	
 		build_vu_meter(bus)
-		build_volume_control(bus)
 	
 	pass # Replace with function body.
 

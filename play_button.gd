@@ -18,8 +18,8 @@ func _ready() -> void:
 	play_btn.text = text
 	var busses: Array[String] = QuackSound.get_busses()
 	
-	for bus in busses:	
-		bus_name.add_item(bus)
+	for bussy in busses:	
+		bus_name.add_item(bussy)
 	
 	bus_name.item_selected.connect(_update)
 	

@@ -29,6 +29,12 @@ var setting_default_player_volume = {
 	"hint_string": "0.0, 1.0"
 }
 
+var setting_default_ignore_busses = {
+	"name": "%sdefault_ignored_busses" % [settings_defaults_path],
+	"default": "",
+	"type": TYPE_STRING,
+}
+
 var setting_remove_settings_on_unload = {
 	"name": "%sremove_settings_on_unload" % [settings_general_path],
 	"default": true,
@@ -68,7 +74,6 @@ func _enter_tree() -> void:
 	# Settings setup
 	_build_settings()
 	_refresh_busses()
-	
 	
 	add_autoload_singleton("QuackSound", "res://addons/quack/quacksound.tscn")
 	AudioServer.bus_layout_changed.connect(_refresh_busses)

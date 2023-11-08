@@ -2,7 +2,7 @@ extends Node
 
 const settings_defaults = "quack/defaults/"
 
-
+#var global: AudioStreamPlayerPool = AudioStreamPlayerPool.new()
 
 
 func _init() -> void:

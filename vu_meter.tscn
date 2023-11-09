@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://jpujp1v5l774"]
+
+[ext_resource type="Script" path="res://vu_meter.gd" id="1_4gusw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_irxsb"]
+font_size = 12
+
+[node name="VuMeter" type="VBoxContainer"]
+script = ExtResource("1_4gusw")
+
+[node name="meter" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(20, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = -200.0
+max_value = 0.0
+fill_mode = 3
+show_percentage = false
+
+[node name="volume" type="Label" parent="meter"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 3.0
+offset_right = 74.0
+offset_bottom = 29.0
+text = "0.00db"
+label_settings = SubResource("LabelSettings_irxsb")
+
+[node name="name" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Bus"
+horizontal_alignment = 1

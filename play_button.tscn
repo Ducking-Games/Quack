@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://srep66eqox2h"]
+
+[ext_resource type="Script" path="res://play_button.gd" id="1_3msqg"]
+
+[node name="PlayButton" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3msqg")
+
+[node name="play" type="Button" parent="."]
+layout_mode = 2
+text = "Text"
+
+[node name="bus" type="OptionButton" parent="."]
+layout_mode = 2
+
+[connection signal="pressed" from="play" to="." method="play"]

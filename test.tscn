@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt7p1f2k3unvp"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_pnxal"]
+[ext_resource type="PackedScene" uid="uid://srep66eqox2h" path="res://play_button.tscn" id="2_37ayd"]
+[ext_resource type="AudioStream" uid="uid://bbf7qfdvav4dk" path="res://samples/button_enter.wav" id="3_lestb"]
+[ext_resource type="AudioStream" uid="uid://dper8gkjwf5wt" path="res://samples/CyberDuck.mp3" id="4_p4aqd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2na4s"]
+font_size = 30
+
+[node name="QuackDemo" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_pnxal")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="lblCreator" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Ducking Games"
+label_settings = SubResource("LabelSettings_2na4s")
+horizontal_alignment = 1
+
+[node name="lblTitle" type="Label" parent="vbox"]
+layout_mode = 2
+text = "Quack v.0.0.1"
+horizontal_alignment = 1
+
+[node name="lblPurpose" type="Label" parent="vbox"]
+layout_mode = 2
+text = "DEMO"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="vbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VUContainer" type="CenterContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="hbox" type="HBoxContainer" parent="vbox/VUContainer"]
+layout_mode = 2
+
+[node name="VolContainer" type="CenterContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="hbox" type="HBoxContainer" parent="vbox/VolContainer"]
+layout_mode = 2
+
+[node name="Controls" type="CenterContainer" parent="vbox"]
+layout_mode = 2
+
+[node name="vbox" type="VBoxContainer" parent="vbox/Controls"]
+layout_mode = 2
+
+[node name="play_ui_beep" parent="vbox/Controls/vbox" instance=ExtResource("2_37ayd")]
+layout_mode = 2
+text = "Beep Sound"
+file = ExtResource("3_lestb")
+
+[node name="play_song_1" parent="vbox/Controls/vbox" instance=ExtResource("2_37ayd")]
+layout_mode = 2
+text = "Cyber Duck (Song)"
+file = ExtResource("4_p4aqd")
+
+[node name="play_song_2" parent="vbox/Controls/vbox" instance=ExtResource("2_37ayd")]
+layout_mode = 2
+text = "EXT (song)"
+
+[node name="btnQuit" type="Button" parent="vbox/Controls/vbox"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="vbox/Controls/vbox/btnQuit" to="." method="quit"]
